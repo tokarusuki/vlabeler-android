@@ -22,8 +22,8 @@ buildscript {
 }
 
 plugins {
-    kotlin("multiplatform")
-    kotlin("plugin.serialization") version "1.9.23"
+    kotlin("multiplatform") version "1.9.24" apply false
+    kotlin("plugin.serialization") version "1.9.24" apply false
     id("org.jetbrains.compose")
     id("org.jlleitschuh.gradle.ktlint") version "11.6.1"
     id("com.github.jk1.dependency-license-report") version "2.0"
