@@ -1,7 +1,6 @@
 plugins {
     id("com.android.application")
     kotlin("android")
-    id("org.jetbrains.kotlin.android") version "1.9.24"
 }
 
 android {
@@ -13,7 +12,7 @@ android {
         minSdk = 26
         targetSdk = 35
         versionCode = 1
-        versionName = project.version.toString()
+        versionName = providers.gradleProperty("app.version").get()
     }
 
     buildFeatures { compose = true }
