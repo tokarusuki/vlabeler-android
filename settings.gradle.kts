@@ -10,7 +10,10 @@ pluginManagement {
     plugins {
         kotlin("multiplatform").version(extra["kotlin.version"] as String)
         id("org.jetbrains.compose").version(extra["compose.version"] as String)
+        id("com.android.application").version(extra["agp.version"] as String)
     }
 }
 
 rootProject.name = "vlabeler"
+
+include(":androidApp")
