@@ -6,7 +6,7 @@ import java.nio.ByteOrder
 import kotlin.math.abs
 
 /** Lightweight PCM WAV reader for Android waveform previews; replaces javax.sound.sampled desktop code. */
-data class Waveform(val sampleRate: Int, val channels: Int, val peaks: List<Float>)
+data class Waveform(val sampleRate: Int, val channels: Int, val frameCount: Int, val peaks: List<Float>)
 
 fun readWavPeaks(input: InputStream, maxPeaks: Int = 2048): Waveform {
     val bytes = input.readBytes()
@@ -62,5 +62,5 @@ fun readWavPeaks(input: InputStream, maxPeaks: Int = 2048): Waveform {
         }
         peaks += peak.coerceIn(0f, 1f)
     }
-    return Waveform(sampleRate, channels, peaks)
+    return Waveform(sampleRate, channels, frames, peaks)
 }
